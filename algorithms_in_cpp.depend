@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1543163890 source:d:\e-books\algorithm\cpp\algorithms\main.cpp
+	<iostream>
+
+1535971242 source:d:\e-books\algorithm\cpp\algorithms\fastmodulomultiplication.cpp
+	<iostream>
+	<math.h>
+
+1553369646 source:d:\e-books\algorithm\code\algorithms_in_cpp\fastmodulomultiplication.cpp
+	<iostream>
+	<math.h>
+
+1552283453 source:d:\e-books\algorithm\code\algorithms_in_cpp\competitive programmer handbook\code_template.cpp
+	<bits/stdc++.h>
+
+1552291311 source:d:\e-books\algorithm\code\algorithms_in_cpp\competitive programmer handbook\working_with_numbers.cpp
+	<bits/stdc++.h>
+
+1553366229 source:d:\e-books\algorithm\code\algorithms_in_cpp\competitive programmer handbook\max_subarray_sum.cpp
+	<bits/stdc++.h>
+
+1553420461 source:d:\e-books\algorithm\code\algorithms_in_cpp\competitive programmer handbook\bubble_sort.cpp
+	<bits/stdc++.h>
+
+1553933662 source:d:\e-books\algorithm\code\algorithms_in_cpp\competitive programmer handbook\binary_search.cpp
+	<bits/stdc++.h>
+
