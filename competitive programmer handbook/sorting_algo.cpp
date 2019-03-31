@@ -4,12 +4,17 @@ using namespace std;
 
 void bubble_sort(int * arr, int n);
 void counting_sort(int * arr, int n);
+void merge_sort(int * arr, int n);
 
 int main() {
     int n, i = 0;
 
     cout << "Enter n: ";
     cin >> n;
+    if (n < 1) {
+        cout << "n cannot be " << n << "\n";
+        return -1;
+    }
 
     cout << "Enter elements: ";
     int arr[n] = {};
@@ -18,7 +23,8 @@ int main() {
     }
 
 //    bubble_sort(arr, n);
-    counting_sort(arr, n);
+//    counting_sort(arr, n);
+    merge_sort(arr, n);
 
     // print array
     i = 0;
@@ -60,8 +66,36 @@ merge sort was invented by J. von Neumann in 1945
 worst case: O(n log n)
 */
 void merge_sort(int * arr, int n) {
+    if (n == 1) { // base-case
+        return;
+    }
 
+    int pn = n/2;
+    int rn = n - pn;
+    int p[pn], r[rn];
+    int k = 0;
+    for (int i = 0; i < pn; i++) p[i] = arr[k++];
+    for (int i = 0; i < rn; i++) r[i] = arr[k++];
+
+    // divide the array in half
+    merge_sort(p, pn);
+    merge_sort(r, rn);
+
+    // actually sort the divided array
+    // since the p and r are sorted, iterate over them and pick the smallest
+    // by looking at the first element of each array.
+    k = 0;
+    int temp_pn = 0, temp_rn = 0;
+    while (temp_pn < pn && temp_rn < rn) {
+        if (p[temp_pn] < r[temp_rn]) arr[k++] = p[temp_pn++];
+        else arr[k++] = r[temp_rn++];
+    }
+
+    // sort the remaining elements, if the length of p and r are not same
+    while (temp_pn < pn) arr[k++] = p[temp_pn++];
+    while (temp_rn < rn) arr[k++] = r[temp_rn++];
 }
+
 
 /* Counting sort
 The lower bound n log n does not apply to algorithms that do not compare array
